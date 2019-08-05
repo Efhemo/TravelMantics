@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/navigation"
+            app:startDestination="@id/authFragment">
+
+    <fragment android:id="@+id/authFragment"
+              android:name="com.efhems.travelmantics.AuthFragment"
+              android:label="AuthFragment">
+        <action android:id="@+id/action_authFragment_to_signUpFragment"
+                app:destination="@id/signUpFragment" app:enterAnim="@anim/nav_default_enter_anim"/>
+        <action android:id="@+id/action_authFragment_to_userFragment"
+                app:destination="@id/userFragment" app:enterAnim="@anim/nav_default_enter_anim"/>
+    </fragment>
+    <fragment android:id="@+id/signUpFragment"
+              android:name="com.efhems.travelmantics.SignUpFragment"
+              android:label="SignUpFragment">
+        <action android:id="@+id/action_signUpFragment_to_userFragment"
+                app:destination="@id/userFragment"/>
+    </fragment>
+    <fragment android:id="@+id/adminFragment"
+              android:name="com.efhems.travelmantics.AdminFragment"
+              android:label="fragment_auth"
+              tools:layout="@layout/fragment_auth">
+        <action android:id="@+id/action_adminFragment_to_userFragment" app:destination="@id/userFragment"
+                app:popUpTo="@+id/userFragment"/>
+    </fragment>
+    <fragment android:id="@+id/userFragment"
+              android:name="com.efhems.travelmantics.UserFragment"
+              android:label="fragment_user"
+              tools:layout="@layout/fragment_user">
+        <action android:id="@+id/action_userFragment_to_adminFragment3"
+                app:destination="@id/adminFragment"/>
+    </fragment>
+</navigation>
